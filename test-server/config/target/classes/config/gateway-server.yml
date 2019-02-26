@@ -1,0 +1,6 @@
+#spring:
+#  cloud:
+#    routes:
+#      id: test-bizdemo
+#      uri: /biz/*
+#      predicates: /biz/*

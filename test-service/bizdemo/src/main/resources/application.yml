@@ -1,0 +1,14 @@
+server:
+  port: 8092
+
+spring:
+  application:
+    name: test-bizdemo
+
+eureka:
+  client:
+    healthcheck:
+      enables: true
+    serviceUrl:
+      #      defaultZone: http://${REGISTRY_SERVER_USERNAME:registry}:${REGISTRY_SERVER_PASSWORD:password}@localhost:${REGISTRY_SERVER_PORT:8762}/eureka/
+      defaultZone: http://127.0.0.1:8761/eureka/

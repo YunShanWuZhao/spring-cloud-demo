@@ -1,0 +1,26 @@
+spring:
+  application:
+    name: gateway-server
+  cloud:
+    gateway:
+      discovery:
+        locator:
+          enabled: true
+          lower-case-service-id: true
+      routes:
+        - id: test-bizdemo
+          uri: lb://test-bizdemo
+          #          uri: http://localhost:8091
+          predicates:
+            - Path=/biz/**
+          filters:
+            - StripPrefix=1
+server:
+  port: 8080
+
+eureka:
+  client:
+    healthcheck:
+      enables: true
+    serviceUrl:
+      defaultZone: http://127.0.0.1:8761/eureka/
